@@ -19,12 +19,17 @@
 
 <body>
 
-    <div id="app">
-    <div class="carousel-container">
+    <div id="app" >
+    <div class="carousel-container" @mouseover="pouseInterval()" @mouseleave="playInterval()">
         <div class="img-container">
-            <div class="img-slider" :class="index == isActive ? 'active' : ''" v-for="(img, index) in images">
-                <img :src="img.image"  class="img"  alt="">
-                <div class="text-container text_1 " :class="img.isActive ? 'active' : ''" >
+            <div class="img-slider" 
+            :class="index == isActive ? 'active' : ''" v-for="(img, index) in images"
+            >
+                <img 
+                :src="img.image"  class="img"  alt="">
+                <div 
+                class="text-container text_1 "
+                 :class="img.isActive ? 'active' : ''" >
                     <h3>{{img.title}}</h3>
                     <p>{{img.text}}</p>
                 </div>
@@ -52,7 +57,7 @@
         </div>
         <!--end carousel container-->
 
-        
+        <button @click="playInterval()"> autoplay</button>
     </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
