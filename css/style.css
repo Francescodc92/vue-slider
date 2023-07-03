@@ -21,11 +21,17 @@ body {
   display: flex;
 }
 
-
-
-.img-container {
-  width: 75%;
-  position: relative;
+.img-slider{
+    height: 100%;
+    display: none;
+  }
+  .img-slider.active{
+    display: block;
+  }
+  
+  .img-container {
+    width: 75%;
+    position: relative;
 }
 
 .text-container{
@@ -85,7 +91,7 @@ img.img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: none;
+  
   object-position: center;
   position: relative;
   z-index: 1;
@@ -109,6 +115,11 @@ img.img.active {
   height: calc(100% / 5);
   object-fit: cover;
   position: relative;
+  cursor: pointer;
+}
+
+.container-thumbnails > .img-wrapper:hover {
+ border: 1px solid white;
 }
 
 .container-thumbnails > .img-wrapper img.img {
