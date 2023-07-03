@@ -60,10 +60,12 @@ const app = createApp({
         playInterval(){
             this.interval = setInterval(() => {
                 this.nextImgActive()
-            }, 1000)
+            }, 3000)
         }
     },
-    
+    mounted(){
+        this.playInterval()
+    }
 })
 
 app.mount('#app')
