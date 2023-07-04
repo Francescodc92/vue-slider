@@ -33,7 +33,7 @@ const app = createApp({
 
                 }
             ],
-            interval: ''
+            interval: null
         }
     },
     methods: {
@@ -55,7 +55,8 @@ const app = createApp({
             this.isActive = i
         },
         pouseInterval(){
-          clearInterval(this.interval) 
+          clearInterval(this.interval)
+          this.interval = null 
         },
         playInterval(){
             this.interval = setInterval(() => {

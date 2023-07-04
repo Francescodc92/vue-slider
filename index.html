@@ -20,7 +20,7 @@
 <body>
 
     <div id="app" >
-    <div class="carousel-container" @mouseover="pouseInterval()" @mouseleave="playInterval()">
+    <div class="carousel-container" @mouseenter="pouseInterval()" @mouseleave="playInterval()">
         <div class="img-container">
             <div class="img-slider" 
             :class="index == isActive ? 'active' : ''" v-for="(img, index) in images"
@@ -46,8 +46,14 @@
         <!--end img container-->
         <div class="container-thumbnails">
             <!--elements -->
-            <div @click="changeImgCurrent(index)" class="img-wrapper" v-for="(img, index) in images">
-                <img :src="img.image" :class="index == isActive ? 'active' : ''"  class="img"  alt="">
+            <div @click="changeImgCurrent(index)"
+             class="img-wrapper" 
+             v-for="(img, index) in images"
+            >
+                <img :src="img.image" 
+                :class="index == isActive ? 'active' : ''"
+                class="img"  alt=""
+                >
             </div>
     
             <!--elements -->
